@@ -16,7 +16,7 @@ def timeConversion(s)
   minute = s[3...5]
   second = s[6...8]
   time = s[-2..-1]
-  hour = (hour.to_i + 12) % 24 if time == 'PM' && hour != '12'
+  hour = hour.to_i + 12 if time == 'PM' && hour != '12'
   hour = '00' if time == 'AM' && hour == '12'
   "#{hour}:#{minute}:#{second}"
 end
